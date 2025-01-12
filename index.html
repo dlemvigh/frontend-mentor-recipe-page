@@ -16,6 +16,16 @@
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
+      @font-face {
+        font-family: 'Young Serif';
+        src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf');
+      }
+
+      @font-face {
+        font-family: 'Outfit';
+        src: url('./assets/fonts/outfit/Outfit-VariableFont_wght.ttf');
+      }
+
       :root {
         --color-white: hsl(0, 0%, 100%);
 
@@ -30,14 +40,18 @@
         --color-rose-50: hsl(330, 100%, 98%);
       }
 
+
       body {
         background-color: var(--color-stone-150);
+        font-family: 'Outfit', sans-serif;
+        color: var(--color-stone-900);
+        margin: 0;
       }
 
       article {
         background-color: var(--color-white);
-        margin: 4rem auto 0;
-        max-width: 30rem;
+        margin: 4rem auto 2rem;
+        box-sizing: border-box;
         padding: 1.5rem;
         border-radius: 1rem;;
       }
@@ -53,16 +67,39 @@
       }
       h1, h2, h3 {
         margin-block: 0;
+        font-family: 'Young Serif', serif;
       }
-      h2, h3 {
+      h1 {
+        font-size: 40px;
+        color: var(--color-stone-900);
+        font-weight: 400;
+      }
+      h2 {
+        font-weight: 500;
+        font-size: 28px;
+        color: var(--color-rose-800);
+      }
+      h3 {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
         color: var(--color-rose-800);
       }
       ul,ol {
         padding-inline-start: 0;
-        list-style-position: inside;
+        margin-left: 1.5rem;
       }
       li::marker {
         color: var(--color-rose-800);
+      }
+      li {
+        padding-left: 1rem;
+      }
+      li + li {
+        margin-top: .5rem;
+      }
+      strong {
+        line-height: 150%;
+        color: var(--color-stone-600);
       }
       table {
         width: 100%;
@@ -76,6 +113,11 @@
         font-weight: bold;
       }
 
+      hr {
+        margin: 2rem 0;
+        border-style: solid;
+        border-color: var(--color-stone-150);
+      }
       .attribution {
         font-size: 11px;
         text-align: center;
@@ -83,6 +125,31 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
+
+      @media screen and (width >= 1440px) {
+        article {
+          max-width: 736px;
+        }
+      }
+      @media screen and (1440px > width >= 768px) {
+        article {
+          max-width: 616px;
+        }
+      }
+      @media screen and (768px > width) {
+        article {
+          max-width: 100%;
+          margin: 0;
+          border-radius: 0;
+        }
+
+        img {
+          border-radius: 0;
+          margin: -1.5rem -3rem 1rem;
+          width: calc(100% + 6rem)
+        }
+      }
+
     </style>
   </head>
   <body>
@@ -100,9 +167,9 @@
         <h3>Preparation time</h3>
 
         <ul>
-          <li><strong>Total</strong> Approximately 10 minutes</li>
-          <li><strong>Preparation</strong> 5 minutes</li>
-          <li><strong>Cooking</strong> 5 minutes</li>
+          <li><strong>Total</strong>: Approximately 10 minutes</li>
+          <li><strong>Preparation</strong>: 5 minutes</li>
+          <li><strong>Cooking</strong>: 5 minutes</li>
         </ul>
       </section>
 
